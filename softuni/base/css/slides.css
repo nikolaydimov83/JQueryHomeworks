@@ -1,6 +1,27 @@
 .slider{
+    margin-top: 5%;
     position: absolute;
     top: 0;
     left: 0;
     display: none;
+    width: 60%;
+}
+p{
+    text-align: justify;
+    background-color: rgb(35, 68, 101);
+    color: orange;
+    padding: 2%;
+    border: 3px solid orange;
+}
+.slider div{
+    background-color: orange;
+}
+a{
+    text-align: center;
+    background-color: rgb(35, 68, 101);
+    color: orange;
+    text-decoration: none;
+    display:block;
+    padding: 5%;
+    border: 3px solid orange;
 }

@@ -9,21 +9,37 @@ $(function() {
         }
         
     })
+    $('.left').on('click',function(){
+        $('.slider').each(function(index,element){
+            if(element.style.zIndex===maxZIndex){
+                console.log('ID!!!'+element.id)
+                console.log('Before'+element.style.zIndex)
+                element.style.zIndex=-1;
+                console.log('After'+element.style.zIndex)
+            }else{
+                console.log('ID'+element.id)
+                console.log('Before'+element.style.zIndex)
+                element.style.zIndex++;
+                console.log('After'+element.style.zIndex)
+            }
+            
+        })
+        changeElements()
+    })
     function changeElements(){
         $('.slider').each(function(index,element){
-            if(element.style.zIndex<maxZIndex){
-                $('#'+element.id).hide() 
-                element.style.zIndex++  
+            if(element.style.zIndex>-1){
+                $('#'+element.id).hide();
+                element.style.zIndex--  
             }else{
-                $('#'+element.id).show()
-                console.log($(element.id))
-                console.log(element.id);
-                console.log(element.style.zIndex);
-                element.style.zIndex=-1;
+                $('#'+element.id).show();
+                element.style.zIndex=maxZIndex;
             }
 
             
         })
     }
+
     setInterval(changeElements, 5000);
+
 })
