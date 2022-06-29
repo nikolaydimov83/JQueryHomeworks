@@ -5,7 +5,7 @@ let inputArray=[{"manufacturer":"BMW","model":"E92 320i","year":2011,"price":500
 {"manufacturer":"Peugeot","model":"305","year":1978,"price":1000,"class":"Family","Gear box":"Manual"},
 {"manufacturer":"Peugeot","model":"305","year":1978,"price":1000,"class":"Family"},
 
-{"manufacturer":"Peugeot","model":"305","year":1978,"price":1000,"class":"Family","Gear box":"Auto"},
+{"Gear box":"Auto","manufacturer":"Trabant","model":"Great","year":1978,"price":1000,"class":"Family"},
 {"manufacturer":"Peugeot","model":"305","year":1978,"price":1000,"class":"Family","Gear box":"Auto","Brakes":"Disc"}];
 let _arrayOfObjects=new WeakMap();
 class TableWritter{
