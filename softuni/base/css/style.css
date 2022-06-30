@@ -130,5 +130,9 @@ h2 {
 
 .fancy-link:hover:after {
   transform: scaleX(1); }
-
+a {
+  text-decoration: none;
+  text-align: center;
+  color: white;
+}
 /*# sourceMappingURL=style.css.map */

@@ -4,7 +4,7 @@
     top: 0;
     left: 0;
     display: none;
-    width: 60%;
+    width: 100%;
 }
 p{
     text-align: justify;
@@ -26,25 +26,27 @@ a{
     border: 3px solid orange;
 }
 .right {
-    display: inline-block;
+    
     background-color: rgb(35, 68, 101);
     color: orange;
     padding: 1%;
     border: 3px solid orange;
-    width: 26.6%;
+    width: 38%;
     text-align: center;
+    float: right;
     
    
 }
 
 .left{
-    display: inline-block;
+    
     background-color: rgb(35, 68, 101);
     color: orange;
     padding: 1%;
     border: 3px solid orange;
-    width: 26.6%;
+    width: 38%;
     text-align: center;
+    float: left;
 
 }
 .body{

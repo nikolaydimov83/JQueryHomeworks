@@ -7,7 +7,7 @@ $(function() {
 //$(".new-trial p:last").css("background-color","rgba(180,180,30,0.9)");
 //$("#list li ul li:even").css("background-color","rgba(180,180,30,0.9)");
 //$("#list").find("li ul li").css("background-color","rgba(180,180,30,0.9)");
-$(':header').next().css("background-color","rgba(180,180,180,0.9)");
+//$(':header').next().css("background-color","rgba(180,180,180,0.9)");
 $('form').children("input:password").css("background-color","rgba(180,180,30,0.9)");
 
 function addElement(elementRecieving,typeOfElement,appendOrPrepend){
