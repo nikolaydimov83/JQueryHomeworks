@@ -1,45 +1,66 @@
 $(function() {
-    let zIndex=-1;
+    let zIndex=0;
     let maxZIndex=-1;
+    let a;
     $('.slider').each(function(index,element){
         element.id=Number(zIndex+index);
-        element.style.zIndex=Number(zIndex+index);
-        if (Number(element.id)>maxZIndex){
+        //element.style.zIndex=Number(zIndex+index);
+        /*if (Number(element.id)>maxZIndex){
             maxZIndex=Number(element.id);
-        }
+        }*/
         
     })
+    let sliderLength=$('.slider').length;
+    let i=0;
     $('.left').on('click',function(){
-        $('.slider').each(function(index,element){
-            if(element.style.zIndex===maxZIndex){
-                console.log('ID!!!'+element.id)
-                console.log('Before'+element.style.zIndex)
-                element.style.zIndex=-1;
-                console.log('After'+element.style.zIndex)
-            }else{
-                console.log('ID'+element.id)
-                console.log('Before'+element.style.zIndex)
-                element.style.zIndex++;
-                console.log('After'+element.style.zIndex)
-            }
-            
+        if(i!==0){
+            i--
+        }else{
+            i=sliderLength-1;
+        }   
+        clearTimeout(a);
+        changeElements1();
         })
-        changeElements()
-    })
-    function changeElements(){
-        $('.slider').each(function(index,element){
-            if(element.style.zIndex>-1){
-                $('#'+element.id).hide();
-                element.style.zIndex--  
+        $('.right').on('click',function(){
+            if(i<sliderLength-1){
+                i++
             }else{
-                $('#'+element.id).show();
-                element.style.zIndex=maxZIndex;
-            }
+                i=0;
+            }   
+            clearTimeout(a);
+            changeElements1();
+            })
 
-            
+
+  
+    function changeElements1(){
+        $('.slider').each(function(indexEach,element){
+            if(indexEach===i){
+                $('#'+indexEach).show();
+            }else{
+                $('#'+indexEach).hide();
+            }
         })
+        
+        a=setTimeout(function(){
+            $('.slider').each(function(indexEach,element){
+                if(indexEach===i){
+                    $('#'+indexEach).show();
+                }else{
+                    $('#'+indexEach).hide();
+                }
+            })
+            i++;
+            if (i<sliderLength){
+
+                changeElements1();
+            }else{
+                i=0;
+                changeElements1();
+            }
+        },5000)
+
     }
 
-    setInterval(changeElements, 5000);
-
+   changeElements1()
 })
