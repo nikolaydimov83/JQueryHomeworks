@@ -47,10 +47,21 @@ $(function() {
 
     }
 
-    class TableIteration{
-        
+    class TableEvents{
+        constructor(){
+
+        }
+        listenNewHeaderButton(table){
+            $('#add-header-btn').on('click',function(){
+                let cellValue;
+                cellValue=$('#header-name').val();
+                table.addHeaderCell(cellValue)
+            })
+        }
     }
 let a=new Table([]);
 a.addHeaderCell('Niki');
+let b=new TableEvents();
+b.listenNewHeaderButton(a);
 
 })
