@@ -26,24 +26,30 @@ $(function() {
                     .attr('id',(this.headerArray.length-1))
                     .appendTo('#cell-inputs-wrapper');
                 $('<input></input>')
-                    .attr('type','button')
-                    .attr('id','add-header-cell').appendTo('#cell-inputs-wrapper');
+                    .attr('type','button').attr('value',"Add row")
+                    .attr('id','add-row').appendTo('#cell-inputs-wrapper');
                 }else{
-                    this.rowsArray.push(cellValue);
+                    this.headerArray.push(cellValue);
                     $('table tbody tr:first-child').append('<th>'+cellValue+'</th>');
                     $('<input></input>')
                     .attr('type','text')
                     .attr('placeholder',cellValue)
                     .attr('id',(this.headerArray.length-1))
-                    .appendTo('#cell-inputs-wrapper');
+                    .insertBefore('#add-row');
                 }
 
         }
-        addRow(rowValue){
-
-            
-
+        addRow(){
+            let row=[];
+            $('table tbody').append('<tr></tr>');
+            $('.cellInputsWrapper input[type=text]').each(function(index,value){
+                let inputValue=value.value;
+                row.push(inputValue);
+                $('table tbody tr:last-child').append('<td>'+inputValue+'</td>');
+            })
+            this.rowsArray.push(row);
         }   
+
 
     }
 
@@ -54,14 +60,23 @@ $(function() {
         listenNewHeaderButton(table){
             $('#add-header-btn').on('click',function(){
                 let cellValue;
-                cellValue=$('#header-name').val();
+                cellValue=$('#headerCellName').val();
                 table.addHeaderCell(cellValue)
+                b.listenNewRowButton(a);
+                //console.log('minah');
+            })
+        }
+
+        listenNewRowButton(table){
+            $('#add-row').on('click',function(){
+               table.addRow();
+                //console.log('minah');
             })
         }
     }
 let a=new Table([]);
-a.addHeaderCell('Niki');
 let b=new TableEvents();
 b.listenNewHeaderButton(a);
+
 
 })
