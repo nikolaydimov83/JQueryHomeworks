@@ -63,14 +63,14 @@ $(function() {
                 cellValue=$('#headerCellName').val();
                 table.addHeaderCell(cellValue)
                 b.listenNewRowButton(a);
-                //console.log('minah');
+                
             })
         }
 
         listenNewRowButton(table){
             $('#add-row').on('click',function(){
                table.addRow();
-                //console.log('minah');
+                
             })
         }
     }
