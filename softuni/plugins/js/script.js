@@ -7,11 +7,13 @@ $(function() {
             $(this).on('click',ev=>{
                     if(element.childrenStatus){
                     element.childrenStatus=false;
-                    $(this).next().css('visibility','hidden')
+                    $(this).siblings().css('display','none')//.children('visibility','hidden')
+                   
                     
                 }else{
                     element.childrenStatus=true
-                    $(this).next().css('visibility','visible')
+                    $(this).siblings().css('display','block')//.children('visibility','visible')
+                    $(this).siblings('li').css('display','list-item')
                 }
             })
             element.addEventListener('click',ev=>{
