@@ -7,13 +7,13 @@ $(function() {
             $(this).on('click',ev=>{
                     if(element.childrenStatus){
                     element.childrenStatus=false;
-                    $(this).siblings().css('display','none')//.children('visibility','hidden')
+                    $(this).siblings().css('display','none');
                    
                     
                 }else{
                     element.childrenStatus=true
-                    $(this).siblings().css('display','block')//.children('visibility','visible')
-                    $(this).siblings('li').css('display','list-item')
+                    $(this).siblings().css('display','block');
+                    $(this).siblings('li').css('display','list-item');
                 }
             })
             element.addEventListener('click',ev=>{
@@ -22,5 +22,5 @@ $(function() {
             })
         })
     }
-    $(`.hide-show`).showHide()
+    $(`.hide-show`).showHide();
 }(jQuery))
