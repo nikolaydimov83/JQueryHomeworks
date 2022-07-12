@@ -3,7 +3,7 @@ $(function() {
     $.fn.showHide=function (){
         $(`input`).each(function(index,element){
             element.childrenStatus=true;
-            console.log(element.value)
+           
             $(this).on('click',ev=>{
                     if(element.childrenStatus){
                     element.childrenStatus=false;
